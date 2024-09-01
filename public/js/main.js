@@ -81,13 +81,15 @@ function init() {
         const size = (Math.random() * 3) + 0.5; 
         const x = Math.random() * (canvas.width - size * 2) + size;
         const y = Math.random() * (canvas.height - size * 2) + size;
-        const directionX = (Math.random() * 2) - 1;
-        const directionY = (Math.random() * 2) - 1;
+        const directionX = (Math.random() * 0.5) - 0.25; 
+        const directionY = (Math.random() * 0.5) - 0.25; 
+
         const color = '#fff';
 
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
     }
 }
+
 
 function animate() {
     requestAnimationFrame(animate);
