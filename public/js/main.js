@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const [cmd, ...args] = command.split(' ');
 
         switch(cmd) {
-            case 'about':
-                window.location.href = '#about'; 
+            case 'perfil':
+                window.location.href = './views/perfil.html'; 
                 break;
             case 'projects':
                 window.location.href = '#blogs'; 
