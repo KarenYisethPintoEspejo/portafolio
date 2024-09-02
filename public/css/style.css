@@ -16,33 +16,45 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    margin-right: 50rem;
+    margin-right: 70rem;
     display: flex;
     flex-direction: column;
-    margin-top: 10rem;
+    margin-top: 8.5rem;
     position: relative; 
     z-index: 1; 
     /* border: 1px solid red; */
 }
 
 header {
-    margin-top: 50px;
+    margin-top: 1rem;
+    margin-left: 10rem;
+    margin-right: -5rem;
+
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 p {
+    font-style: italic;
     font-size: 1.2rem;
-    margin-top: 20px;
+    margin-top: 12px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 7rem;
+
 }
 
 nav ul {
     list-style: none;
-    margin: 30px 0;
+    margin: 90px 0;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -52,19 +64,23 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    padding: 5px 10px;
+    padding: 8px 40px;
     border-bottom: 2px solid transparent;
+    border: 3px solid #6b1a51;
+    border-radius: 10px;
 }
 
 nav ul li a:hover {
-    border-bottom: 2px solid #00ff66;
+    border: 3px solid rgb(179, 60, 248);
 }
 
 .social-icons {
-    margin-top: 30px;
+    margin-left: 14rem;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
+    font-size: 1.3rem;
 }
 
 .social-icons a img {
@@ -78,9 +94,9 @@ nav ul li a:hover {
 }
 
 footer {
-    margin-top: 15rem;
+    margin-top: 12rem;
     font-size: 0.8rem;
-    color: #00ff66;
+    color: white;
 }
 
 canvas {
@@ -94,50 +110,135 @@ canvas {
 }
 
 /* Consola */
+/* Consola */
 #consola {
-    margin-top: -18rem;
-    margin-left: 50rem;
+    margin-top: -26rem;
+    margin-left: 62rem;
     margin-right: 10rem;
 }
 
 .console {
-    background-color: black;
-    color: green;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 20px;
-    border-radius: 5px;
-    height: 20rem;
-    box-shadow: 0px 0px 10px 2px rgba(0, 255, 0, 0.5);
-    
-    
-}
-.output-container {
-    font-family: 'Courier New', Courier, monospace;
-    flex: 1;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    width: 42rem;
+    background-color: #300A24;
+    color: white;
+    font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    height: 25rem;
 }
 
+.console-header {
+    background-color: #3C3B37;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.console-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 12px;
+}
+
+.console-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.console-buttons :nth-child(1){
+    background-color: red;
+}
+
+.console-buttons :nth-child(2){
+    background-color: yellow;
+}
+
+.console-buttons :nth-child(3){
+    background-color: #4E9A06;
+}
+
+.console-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #D3D7CF;
+}
+
+.console-content {
+    padding: 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+    position: relative; 
+}
+
+.output-container {
+    min-height: 200px;
+    max-height: 400px;
+}
 
 .input-line {
-    font-family: 'Courier New', Courier, monospace;
     display: flex;
+    align-items: center;
+    padding: 12px;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
 }
 
 .prompt {
-    display: none;
-    font-family: 'Courier New', Courier, monospace;
-    margin-right: 10px;
+    color: #4E9A06;
+    margin-right: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 18rem;
 }
 
 .user-input {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-    flex: 1;
     background: none;
     border: none;
-    color: green;
+    color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    margin-bottom: 18rem;
     outline: none;
+}
+
+/* Scrollbar styles */
+.output-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output-container::-webkit-scrollbar-track {
+    background: #2C001E;
+}
+
+.output-container::-webkit-scrollbar-thumb {
+    background: #4E9A06;
+    border-radius: 4px;
+}
+
+.output-container::-webkit-scrollbar-thumb:hover {
+    background: #5FBA07;
+}
+
+h3{
+    color: #6b1a51;
+    font-family: monospace;
+    font-size: 2.5rem;
+    animation: moveUpDown 5s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
 }

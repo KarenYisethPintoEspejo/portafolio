@@ -2,10 +2,13 @@ document.querySelectorAll('.social-icons a').forEach(icon => {
     icon.addEventListener('mouseover', () => {
         icon.style.transform = 'scale(1.2)';
         icon.style.transition = 'transform 0.2s ease-in-out';
+        icon.style.color = 'rgb(179, 60, 248)';
     });
 
     icon.addEventListener('mouseout', () => {
         icon.style.transform = 'scale(1)';
+        icon.style.color = 'white';
+
     });
 });
 
@@ -113,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const userInput = document.getElementById('userInput');
     const outputContainer = document.getElementById('outputContainer');
     const prompt = document.querySelector('.prompt');
-    const folders = {};
 
     function typeWriter(text, i, callback) {
         if (i < text.length) {
@@ -126,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showWelcomeMessage() {
-        const welcomeText = "Bienvenido al mundo de la codificación. Escribe 'help' para ver los comandos disponibles.\n";
+        const welcomeText = "Bienvenido al mundo de la codificación. Escribe el nombre de la pagina que quieres visitar.\n";
         typeWriter(welcomeText, 0, () => {
             outputContainer.innerHTML += '\n'; 
             prompt.style.display = 'inline'; 
@@ -144,25 +146,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function executeCommand(command) {
+        const responseContainer = document.createElement('div');
         const output = document.createElement('div');
         const [cmd, ...args] = command.split(' ');
 
-        const commandOutput = document.createElement('div');
-        commandOutput.textContent = `karen@pinto-developer:~$ ${command}`;
-        outputContainer.appendChild(commandOutput);
-
         switch(cmd) {
-            case 'help':
-                output.textContent = 'about, projects, contact, cls, date, version, mkdir0, ls, rmdir';
-                break;
             case 'about':
-                output.textContent = 'Soy una desarrolladora con experiencia en backend...';
+                window.location.href = '#about'; 
                 break;
             case 'projects':
-                output.textContent = 'Mis proyectos incluyen...';
+                window.location.href = '#blogs'; 
                 break;
             case 'contact':
-                output.textContent = 'Puedes contactarme en...';
+                window.location.href = '#contact'; 
+                break;
+            case 'resume':
+                window.location.href = '#resume'; 
+                break;
+            case 'blogs':
+                window.location.href = '#blogs'; 
+                break;
+            case 'mission':
+                window.location.href = '#mission'; 
+                break;
+            case 'services':
+                window.location.href = '#services'; 
+                break;
+            case 'professional-goal':
+                window.location.href = '#professional-goal';
                 break;
             case 'cls':
                 outputContainer.innerHTML = '';
@@ -173,43 +184,10 @@ document.addEventListener('DOMContentLoaded', function () {
             case 'version':
                 output.textContent = 'Versión del sistema: 1.0.0';
                 break;
-            case 'mkdir':
-                if (args.length === 0) {
-                    output.textContent = 'Uso: create <nombre_carpeta>';
-                } else {
-                    const folderName = args.join(' ');
-                    if (folders[folderName]) {
-                        output.textContent = `La carpeta "${folderName}" ya existe.`;
-                    } else {
-                        folders[folderName] = true;
-                        output.textContent = `Carpeta "${folderName}" creada.`;
-                    }
-                }
-                break;
-            case 'ls':
-                if (Object.keys(folders).length === 0) {
-                    output.textContent = 'No hay carpetas.';
-                } else {
-                    output.textContent =  Object.keys(folders).join('\n');
-                }
-                break;
-            case 'rmdir':
-                if (args.length === 0) {
-                    output.textContent = 'Uso: delete <nombre_carpeta>';
-                } else {
-                    const folderName = args.join(' ');
-                    if (folders[folderName]) {
-                        delete folders[folderName];
-                        output.textContent = `Carpeta "${folderName}" borrada.`;
-                    } else {
-                        output.textContent = `La carpeta "${folderName}" no existe.`;
-                    }
-                }
-                break;
             default:
                 output.textContent = `Comando no reconocido: ${command}`;
         }
-        outputContainer.appendChild(output);
+        outputContainer.appendChild(responseContainer);
         outputContainer.scrollTop = outputContainer.scrollHeight;
     }
 
@@ -218,3 +196,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showWelcomeMessage();
 });
+
+
