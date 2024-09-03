@@ -9,7 +9,7 @@ body {
     background-color: #000000;
     color: white;
     text-align: center;
-    overflow: hidden;
+    overflow: hidden;   
 }
 
 .container {
@@ -32,11 +32,6 @@ header {
 
 }
 
-h1 {
-    font-size: 6rem;
-    font-weight: bold;
-    margin-bottom: 50px;
-}
 
 p {
     font-style: italic;
@@ -228,6 +223,7 @@ h3{
     color: #6b1a51;
     font-family: monospace;
     font-size: 2.5rem;
+    font-weight: bold;
     animation: moveUpDown 5s ease-in-out infinite;
 }
 
@@ -241,4 +237,30 @@ h3{
     100% {
         transform: translateY(-15px);
     }
+}
+
+
+/* Estilo del encabezado */
+#name-heading {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+
+
+
+#name-heading span {
+    display: inline-block;
+    transition: color 0.2s ease;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #e0e0e0; /* Color inicial de las letras */
+}
+
+/* Cambio de color al pasar el cursor */
+#name-heading span:hover {
+    color: #471136; /* Color morado cuando el cursor está sobre la letra */
 }

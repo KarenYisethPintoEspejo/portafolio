@@ -2,7 +2,7 @@ document.querySelectorAll('.social-icons a').forEach(icon => {
     icon.addEventListener('mouseover', () => {
         icon.style.transform = 'scale(1.2)';
         icon.style.transition = 'transform 0.2s ease-in-out';
-        icon.style.color = 'rgb(179, 60, 248)';
+        icon.style.color = '#6b1a51';
     });
 
     icon.addEventListener('mouseout', () => {
