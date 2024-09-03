@@ -54,11 +54,11 @@ nav ul li a:hover {
 
 .container {
     width: 90%;
-    height: 80%;
+    height: 85%;
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: -3rem;
 }
 
 /* Estilo del cuadro de texto */
@@ -76,7 +76,7 @@ nav ul li a:hover {
 }
 
 .text-box h1 {
-    color: #9b59b6;
+    color: #6b1a51;
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -85,13 +85,13 @@ nav ul li a:hover {
     font-size: 1.2em;
     line-height: 1.6;
     margin-bottom: 20px;
+    margin-right: 2rem;
 }
 
 .image-box {
     width: 45%;
-    background-color: #282828;
+    background-color: #000000;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     position: absolute;
     bottom: 100%;
     right: -100%;
