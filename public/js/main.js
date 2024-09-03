@@ -151,17 +151,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const [cmd, ...args] = command.split(' ');
 
         switch(cmd) {
-            case 'perfil':
+            case 'Perfil':
                 window.location.href = './views/perfil.html'; 
                 break;
+                case 'Resumen':
+                    window.location.href = './storage/HojadeVida.pdf'; 
+                    break;
             case 'projects':
                 window.location.href = '#blogs'; 
                 break;
             case 'contact':
                 window.location.href = '#contact'; 
-                break;
-            case 'resume':
-                window.location.href = '#resume'; 
                 break;
             case 'blogs':
                 window.location.href = '#blogs'; 
