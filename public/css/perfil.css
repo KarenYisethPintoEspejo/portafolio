@@ -59,20 +59,22 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     margin-top: -3rem;
+    margin-left: 17rem;
 }
 
 /* Estilo del cuadro de texto */
 .text-box {
-    width: 45%;
+    width: 40%;
     padding: 20px;
-    background-color: #282828;
+    background-color: #000000;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px #575546;
     position: absolute;
     top: 100%;
     left: -100%;
     transform: translate(0, 0);
     animation: slideInFromLeft 1.5s ease forwards;
+    margin-top: 3rem;
 }
 
 .text-box h1 {
@@ -100,7 +102,7 @@ nav ul li a:hover {
 }
 
 .image-box img {
-    width: 100%;
+    width: 64%;
     height: auto;
     border-radius: 10px;
 }
