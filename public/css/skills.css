@@ -37,7 +37,7 @@ nav ul li a {
     font-size: 1rem;
     padding: 8px 40px;
     border-bottom: 2px solid transparent;
-    border: 3px solid #6b1a51;
+    border: 3px solid rgb(179, 60, 248);
     border-radius: 10px;
 }
 
@@ -57,7 +57,7 @@ nav ul li a:hover {
 
 #skills h2 {
     font-size: 2.5rem;
-    color: #6b1a51;
+    color: rgb(179, 60, 248);
     margin-top: 0;
     margin-bottom: 1rem;
 
@@ -105,7 +105,7 @@ nav ul li a:hover {
 }
 
 .skill-card:hover i {
-    color: #6b1a51;
+    color: rgb(179, 60, 248);
     transform: scale(1.1);
 }
 

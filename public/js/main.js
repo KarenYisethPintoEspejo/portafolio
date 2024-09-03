@@ -2,7 +2,7 @@ document.querySelectorAll('.social-icons a').forEach(icon => {
     icon.addEventListener('mouseover', () => {
         icon.style.transform = 'scale(1.2)';
         icon.style.transition = 'transform 0.2s ease-in-out';
-        icon.style.color = '#6b1a51';
+        icon.style.color = 'rgb(179, 60, 248)';
     });
 
     icon.addEventListener('mouseout', () => {
@@ -111,90 +111,5 @@ window.addEventListener('resize', function() {
 
 init();
 animate();
-
-document.addEventListener('DOMContentLoaded', function () {
-    const userInput = document.getElementById('userInput');
-    const outputContainer = document.getElementById('outputContainer');
-    const prompt = document.querySelector('.prompt');
-
-    function typeWriter(text, i, callback) {
-        if (i < text.length) {
-            outputContainer.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(() => typeWriter(text, i, callback), 50);
-        } else if (callback) {
-            callback();
-        }
-    }
-
-    function showWelcomeMessage() {
-        const welcomeText = "Bienvenido al mundo de la codificación. Escribe el nombre de la pagina que quieres visitar.\n";
-        typeWriter(welcomeText, 0, () => {
-            outputContainer.innerHTML += '\n'; 
-            prompt.style.display = 'inline'; 
-            userInput.style.display = 'inline'; 
-            userInput.focus(); 
-        });
-    }
-
-    userInput.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            const command = userInput.value.trim();
-            executeCommand(command);
-            userInput.value = '';
-        }
-    });
-
-    function executeCommand(command) {
-        const responseContainer = document.createElement('div');
-        const output = document.createElement('div');
-        const [cmd, ...args] = command.split(' ');
-
-        switch(cmd) {
-            case 'Perfil':
-                window.location.href = './views/perfil.html'; 
-                break;
-                case 'Resumen':
-                    window.location.href = './storage/HojadeVida.pdf'; 
-                    break;
-            case 'projects':
-                window.location.href = '#blogs'; 
-                break;
-            case 'contact':
-                window.location.href = '#contact'; 
-                break;
-            case 'blogs':
-                window.location.href = '#blogs'; 
-                break;
-            case 'mission':
-                window.location.href = '#mission'; 
-                break;
-            case 'services':
-                window.location.href = '#services'; 
-                break;
-            case 'professional-goal':
-                window.location.href = '#professional-goal';
-                break;
-            case 'cls':
-                outputContainer.innerHTML = '';
-                return; 
-            case 'date':
-                output.textContent = `Fecha y hora actual: ${new Date().toLocaleString()}`;
-                break;
-            case 'version':
-                output.textContent = 'Versión del sistema: 1.0.0';
-                break;
-            default:
-                output.textContent = `Comando no reconocido: ${command}`;
-        }
-        outputContainer.appendChild(responseContainer);
-        outputContainer.scrollTop = outputContainer.scrollHeight;
-    }
-
-    userInput.style.display = 'none';
-    prompt.style.display = 'none';
-
-    showWelcomeMessage();
-});
 
 
