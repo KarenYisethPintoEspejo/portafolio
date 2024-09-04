@@ -47,9 +47,9 @@ nav ul li a:hover {
     border: 3px solid rgb(179, 60, 248);
 }
 #services {
-    padding: 2rem;
+
     background: transparent;
-    height: 190vh;
+    min-height: 100vh;
 }
 
 #services h2 {
@@ -61,12 +61,13 @@ nav ul li a:hover {
 
 .service-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 70%;
     margin: 0 auto;
     height: 60vh;
     overflow-y: auto;
-    margin-left: 20.5%;
+    margin-left: 15%;
     scrollbar-width: none;
+        padding-bottom: 20px;
     -ms-overflow-style: none;
     /* border: 1px solid red; */
 }
@@ -86,6 +87,7 @@ nav ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 60px;
     margin-top: 15px;
+    margin: 18px auto;
     z-index: 1;
     font-family: 'Courier New', Courier, monospace;
     border: 3px solid #ffffff; 
@@ -202,7 +204,7 @@ pre {
     margin: 0;
     color: #abb2bf;
 }
-
+/* 
 .last {
-    margin-bottom: 15.5rem;
-}
+    margin-bottom: 21.8%;
+} */

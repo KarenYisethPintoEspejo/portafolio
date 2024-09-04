@@ -54,7 +54,8 @@ nav ul li a:hover {
 .info {
     display: flex;
     flex-direction: row;
-    gap: 1px;
+
+    /* border: 1px solid red; */
 }
 
 /* Estilo del contenedor principal */
@@ -66,7 +67,7 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 10px;
-    margin-left: 5.5rem;
+    margin-left: 8%;
 }
 
 /* Estilo del cuadro de misión y visión */

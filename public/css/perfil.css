@@ -73,7 +73,7 @@ nav ul li a:hover {
     transform: translateY(-50%);
     animation: slideInFromLeft 5s ease-in-out forwards;
     will-change: transform, left;
-    margin-top: 3rem;
+    margin-top:0rem;
 }
 
 .text-box h1 {
