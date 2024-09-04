@@ -102,4 +102,4 @@ animate();
 
         setTimeout(() => {
             window.location.href = './views/inicio.html'; 
-        }, 4800); 
+        }, 4990); 
