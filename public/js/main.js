@@ -1,16 +1,3 @@
-document.querySelectorAll('.social-icons a').forEach(icon => {
-    icon.addEventListener('mouseover', () => {
-        icon.style.transform = 'scale(1.2)';
-        icon.style.transition = 'transform 0.2s ease-in-out';
-        icon.style.color = 'rgb(179, 60, 248)';
-    });
-
-    icon.addEventListener('mouseout', () => {
-        icon.style.transform = 'scale(1)';
-        icon.style.color = 'white';
-
-    });
-});
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -113,13 +100,6 @@ init();
 animate();
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.classList.add('loaded');
-    document.querySelector('.container').classList.add('loaded');
-    document.querySelector('nav').classList.add('loaded');
-    document.querySelector('#name-heading').classList.add('loaded');
-    document.querySelector('p').classList.add('loaded');
-    document.querySelector('.social-icons').classList.add('loaded');
-    document.querySelector('footer').classList.add('loaded');
-    document.querySelector('#consola').classList.add('loaded');
-});
+        setTimeout(() => {
+            window.location.href = './views/inicio.html'; 
+        }, 4800); 

@@ -13,7 +13,7 @@ const config = {
 app.use(express.static(config.static));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(config.static, 'index.html'));
+    res.sendFile(path.join(config.static, ''));
 });
 
 app.use((err, req, res, next) => {
