@@ -81,9 +81,12 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-width: 300px;
-    height: 30rem;
+    height: 34rem;
+    border: 2px solid transparent ;
 }
-
+.project-card:hover{
+    border: 2px solid rgb(179, 60, 248);
+}
 
 .project-image {
     height: 380px;
@@ -92,11 +95,14 @@ nav ul li a:hover {
 
 .project-image img {
     width: 21rem;
-    filter: blur(1px); /* Ajusta el valor para aumentar o disminuir el desenfoque */
+    filter: blur(0.8px); /* Ajusta el valor para aumentar o disminuir el desenfoque */
 }
 
 
 .project-info {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
 }
 
@@ -106,7 +112,7 @@ nav ul li a:hover {
 }
 
 .project-info p {
-    margin: 0.5rem 0 0;
+    margin: 0.3rem 0 0;
     font-size: 0.9rem;
 }
 
@@ -122,5 +128,10 @@ nav ul li a:hover {
 
 .project-info a{
     text-decoration: none;
-    color: white;
+    color: rgb(146, 146, 146);
+    font-size: 1.2rem;
+}
+.project-info a:hover{
+    color: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(146, 146, 146);
 }

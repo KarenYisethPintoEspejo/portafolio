@@ -102,18 +102,16 @@ animate();
 window.onload = function() {
     const cards = document.querySelectorAll('.skill-card');
 
-    // Efecto de volteo al cargar la página
     cards.forEach((card, index) => {
         setTimeout(() => {
             card.classList.add('flipped');
-            // Después de 1 segundo, quitamos la clase flipped para que las tarjetas regresen a su estado original
             setTimeout(() => {
                 card.classList.remove('flipped');
-            }, 500); // Ajusta este tiempo según la duración de tu animación
-        }, index * 300);  // Se retrasa el giro de cada tarjeta
+            }, 500); 
+        }, index * 300); 
     });
 
-    // Añadir evento hover para que las tarjetas se volteen al pasar el cursor
+
     cards.forEach((card) => {
         card.addEventListener('mouseenter', () => {
             card.classList.add('flipped');

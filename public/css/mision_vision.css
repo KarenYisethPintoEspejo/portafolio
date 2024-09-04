@@ -210,12 +210,6 @@ nav ul li a:hover {
     }
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .mission-box, .vision-box {
-        width: 90%;
-    }
-}
 
 .img img {
     display: flex;
