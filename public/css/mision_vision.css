@@ -53,69 +53,176 @@ nav ul li a:hover {
 }
 
 
+.info{
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+
 /* Estilo del contenedor principal */
 .container {
-    width: 90%;
+    width: 60%;
     height: 80%;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
+    margin-top: 10px;
+    /* border: 1px solid green; */
+    margin-left: 5.5rem;
 }
 
 /* Estilo del cuadro de misión */
-.mission-box {
-    width: 45%;
-    padding: 20px;
-    background-color: #282828;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 2s ease forwards 0.5s;
+.mission-box, .vision-box {
+    width: 70%;
+    min-width: 500px;
+    height: 20rem;
+    margin: 30px;
+    padding: 0 40px;
+    background: #000000;
+    border-radius: 15px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3), 
+                -8px -8px 16px rgba(30, 30, 50, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgb(116, 116, 116);
 }
 
-.mission-box h2 {
-    color: rgb(179, 60, 248);
+.mission-box:hover, .vision-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.4), 
+                -12px -12px 24px rgba(30, 30, 50, 0.15);
+}
+
+.electric-corner {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.8) 0%, rgba(138, 43, 226, 0) 70%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    opacity: 0;
+}
+
+.mission-box:hover .electric-corner,
+.vision-box:hover .electric-corner {
+    opacity: 1;
+}
+
+
+/* Efecto de borde brillante */
+.mission-box::before, .vision-box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8439ad, #2e0f3a, #60209c, #8439ad);
+    background-size: 400% 400%;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 17px; /* Slightly larger than the box */
+}
+
+.mission-box:hover::before, .vision-box:hover::before {
+    opacity: 1;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.mission-box:hover::before, .vision-box:hover::before {
+    opacity: 0.7;
+}
+
+/* Estilos de texto */
+.mission-box h2, .vision-box h2 {
+    color: #8a2be2;
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.mission-box p {
-    font-size: 1.2em;
+.mission-box p, .vision-box p {
+    font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Estilo del cuadro de visión */
-.vision-box {
-    width: 45%;
-    padding: 20px;
-    background-color: #282828;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 2s ease forwards 1s;
-}
-
-.vision-box h2 {
-    color: rgb(179, 60, 248);
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.vision-box p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Animaciones */
+/* Animación de entrada */
 @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.mission-box, .vision-box {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.mission-box {
+    animation-delay: 0.3s;
+}
+
+.vision-box {
+    animation-delay: 0.6s;
+}
+
+/* Efecto de partículas en hover */
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, #8a2be2 10%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: particleAnimation 1s ease-out forwards;
+}
+
+@keyframes particleAnimation {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(var(--translate-x), var(--translate-y)) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mission-box, .vision-box {
+        width: 90%;
+    }
+}
+
+
+.img img{
+    display: flex;
+    width: 25rem;
+    border: 1px solid rgb(116, 116, 116);
+    margin-top: 3rem;
 }

@@ -98,3 +98,70 @@ window.addEventListener('resize', function() {
 
 init();
 animate();
+document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.mission-box, .vision-box');
+
+    boxes.forEach(box => {
+        box.addEventListener('mousemove', (e) => {
+            createParticle(e, box);
+            updateIlluminatedBorder(e, box);
+        });
+
+        box.addEventListener('mouseleave', () => {
+            box.style.setProperty('--light-position-x', '50%');
+            box.style.setProperty('--light-position-y', '50%');
+            box.style.setProperty('--light-intensity', '0');
+        });
+    });
+
+    function createParticle(e, parent) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.floor(Math.random() * 10 + 5);
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        const rect = parent.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 60 + 40;
+        const translateX = Math.cos(angle) * distance;
+        const translateY = Math.sin(angle) * distance;
+
+        particle.style.setProperty('--translate-x', `${translateX}px`);
+        particle.style.setProperty('--translate-y', `${translateY}px`);
+
+        parent.appendChild(particle);
+
+        setTimeout(() => {
+            particle.remove();
+        }, 1000);
+    }
+
+    function updateIlluminatedBorder(e, box) {
+        const rect = box.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const normalizedX = x / rect.width;
+        const normalizedY = y / rect.height;
+
+        const distanceToEdge = Math.min(
+            normalizedX,
+            normalizedY,
+            1 - normalizedX,
+            1 - normalizedY
+        );
+        const intensity = 1 - Math.min(distanceToEdge * 5, 1);
+
+        box.style.setProperty('--light-position-x', `${normalizedX * 100}%`);
+        box.style.setProperty('--light-position-y', `${normalizedY * 100}%`);
+        box.style.setProperty('--light-intensity', intensity.toFixed(2));
+    }
+});
