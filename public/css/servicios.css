@@ -60,41 +60,154 @@ nav ul li a:hover {
 }
 
 /* Contenedor de servicios */
-/* Contenedor de servicios */
 .service-container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    height: 50vh; /* Fija la altura del contenedor */
-    overflow-y: auto; /* Habilita el scroll vertical */
-    padding-right: 15px;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Espacio para la barra de desplazamiento */
+    height: 60vh;
+    overflow-y: auto;
+    margin-left: 20.5%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* border: 1px solid red; */
 }
-
+.service-container::-webkit-scrollbar {
+    width: 0;
+    background: transparent; 
+}
 
 /* Tarjetas de servicio */
 .service-card {
     background-color: #333;
     color: #fff;
     border-radius: 10px;
-    padding: 40px;
-    width: 90%;
+    padding: 20px;
+    width: 80%;
+    height: 38%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    margin-top: 15px;
     z-index: 1;
+    font-family: 'Courier New', Courier, monospace;
+    border: 3px solid #ffffff; 
+    animation: borderColorChange 5s infinite; 
+    animation: slideIn 0.8s forwards;
+    opacity: 0; 
+    transform: translateY(50px); 
+}
+
+/* Animation for service cards */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay the animation for each card */
+.service-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.service-card:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.service-card:nth-child(6) {
+    animation-delay: 1.2s;
+}
+ 
+
+@keyframes borderColorChange {
+    0% {
+        border-color: #b7b7b7;
+    }
+    33% {
+        border-color: rgb(179, 60, 248);
+    }
+    100% {
+        border-color: #b7b7b7;
+    }
+}
+pre code .keyword {
+    color: rgb(179, 60, 248); /* Example color */
+    font-weight: bold;
 }
 
 /* Efecto de apilamiento al hacer scroll */
 .service-card {
     position: sticky;
-    top: 1px;
+    top: 15px;
     transform: translateY(1);
 }
 
-.last{
-    margin-bottom: 17rem;
+pre {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
 }
 
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
 
+/* Header de la tarjeta */
+.code-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.code-card-header .dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.dot.red {
+    background-color: rgb(34, 34, 34);
+}
+
+.dot.yellow {
+    background-color: rgb(23, 23, 23);
+}
+
+.dot.green {
+    background-color: #000000;
+}
+
+.code-card-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.service-card p {
+    margin: 0;
+    color: #abb2bf;
+}
+
+.last {
+    margin-bottom: 15.5rem;
+}

@@ -98,3 +98,8 @@ window.addEventListener('resize', function() {
 
 init();
 animate();
+
+document.querySelectorAll('code').forEach((block) => {
+    block.innerHTML = block.innerHTML.replace(/const/g, '<span class="keyword">const</span>');
+});
+
