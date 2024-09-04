@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
@@ -31,7 +32,6 @@ nav ul {
     display: flex;
     justify-content: center;
     gap:20px;
-
 }
 
 nav ul li a {
@@ -48,7 +48,6 @@ nav ul li a:hover {
     border: 3px solid rgb(179, 60, 248);
 }
 
-
 #projects {
     padding: 2rem 1rem;
     text-align: center;
@@ -60,11 +59,17 @@ nav ul li a:hover {
     color: #b86fc6;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 85%;
+    margin-left: 7.8rem;
+}
+
+.carousel-track {
+    display: flex;
     gap: 20px;
-    padding: 0 1rem;
+    animation: scroll 20s linear infinite;
 }
 
 .project-card {
@@ -73,15 +78,13 @@ nav ul li a:hover {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 300px;
+    height: 25rem;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
 
 .project-image {
-    height: 200px;
+    height: 280px;
     background: linear-gradient(45deg, rgb(179, 60, 248), rgb(179, 60, 248));
 }
 
@@ -97,4 +100,14 @@ nav ul li a:hover {
 .project-info p {
     margin: 0.5rem 0 0;
     font-size: 0.9rem;
+}
+
+/* Animación del carrusel */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
