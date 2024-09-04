@@ -56,7 +56,7 @@ nav ul li a:hover {
 #projects h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #b86fc6;
+    color: rgb(179, 60, 248);
 }
 
 .carousel {
@@ -94,7 +94,7 @@ nav ul li a:hover {
 
 .project-info h3 {
     margin: 0;
-    color: #b86fc6;
+    color: rgb(179, 60, 248);
 }
 
 .project-info p {
