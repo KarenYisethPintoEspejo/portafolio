@@ -113,3 +113,13 @@ init();
 animate();
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('loaded');
+    document.querySelector('.container').classList.add('loaded');
+    document.querySelector('nav').classList.add('loaded');
+    document.querySelector('#name-heading').classList.add('loaded');
+    document.querySelector('p').classList.add('loaded');
+    document.querySelector('.social-icons').classList.add('loaded');
+    document.querySelector('footer').classList.add('loaded');
+    document.querySelector('#consola').classList.add('loaded');
+});

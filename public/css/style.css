@@ -10,6 +10,11 @@ body {
     color: white;
     text-align: center;
     overflow-y: hidden;   
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+}
+body.loaded {
+    opacity: 1; 
 }
 
 .container {
@@ -23,9 +28,16 @@ body {
     justify-content: center;
     margin-top: 10rem; 
     z-index: 1; 
-    /* border: 1px solid red; */
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+
 }
 
+.container.loaded {
+    opacity: 1; 
+    transform: translateY(0); 
+}
 
 
 
@@ -33,6 +45,13 @@ p {
     font-style: italic;
     font-size: 1.2rem;
     margin-top: 12px;
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; 
+}
+p.loaded {
+    opacity: 1;
+    transform: translateY(0); 
 }
 
 
@@ -41,9 +60,16 @@ nav{
     justify-content: center;
     width: 100%;
     height: 7rem;
+    opacity: 0; 
+    transform: translateY(-50px);
+    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 
 }
 
+nav.loaded {
+    opacity: 1;
+    transform: translateY(0); 
+}
 
 
 nav ul {
@@ -73,6 +99,14 @@ nav ul li a {
     gap: 50px;
     font-size: 1.3rem;
     margin-right: 2rem;
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out 0.75s, transform 1s ease-in-out 0.75s;
+}
+
+.social-icons.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .social-icons a img {
@@ -89,6 +123,13 @@ footer {
     margin-top: 8rem;
     font-size: 0.8rem;
     color: white;
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s; /
+}
+footer.loaded {
+    opacity: 1; 
+    transform: translateY(0);
 }
 
 canvas {
@@ -101,14 +142,18 @@ canvas {
     z-index: -1; 
 }
 
-/* Consola */
-/* Consola */
 #consola {
     margin-top: -22rem;
     margin-left: 34rem;
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out 1.25s, transform 1s ease-in-out 1.25s;
 }
 
-
+#consola.loaded {
+    opacity: 1;
+    transform: translateY(0); 
+}
 h3{
     color: rgb(179, 60, 248);
     font-family: monospace;
@@ -136,7 +181,6 @@ h3{
 }
 
 
-/* Estilo del encabezado */
 #name-heading {
     font-size: 5rem;
     font-weight: bold;
@@ -144,22 +188,27 @@ h3{
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out 0.25s, transform 1s ease-in-out 0.25s; 
 }
 
-
+#name-heading.loaded {
+    opacity: 1;
+    transform: translateY(0); 
+}
 
 #name-heading span {
     display: inline-block;
     transition: color 0.2s ease;
     font-size: 5rem;
     font-weight: bold;
-    color: #e0e0e0; /* Color inicial de las letras */
+    color: #e0e0e0; /
 }
 
-/* Cambio de color al pasar el cursor */
 #name-heading span:hover {
     color: rgb(179, 60, 248);
-    scale: 1.1; /* Color morado cuando el cursor está sobre la letra */
+    scale: 1.1; 
 }
 
 #consola img{
