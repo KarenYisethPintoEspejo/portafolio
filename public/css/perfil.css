@@ -18,7 +18,7 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; 
+    z-index: -1;
 }
 
 nav {
@@ -33,8 +33,7 @@ nav ul {
     margin-left: -40px;
     display: flex;
     justify-content: center;
-    gap:20px;
-
+    gap: 20px;
 }
 
 nav ul li a {
@@ -51,7 +50,6 @@ nav ul li a:hover {
     border: 3px solid rgb(179, 60, 248);
 }
 
-
 .container {
     width: 90%;
     height: 85%;
@@ -62,7 +60,7 @@ nav ul li a:hover {
     margin-left: 17rem;
 }
 
-/* Estilo del cuadro de texto */
+
 .text-box {
     width: 40%;
     padding: 20px;
@@ -70,10 +68,11 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 0 15px #575546;
     position: absolute;
-    top: 100%;
-    left: -100%;
-    transform: translate(0, 0);
-    animation: slideInFromLeft 1.5s ease forwards;
+    top: 50%;
+    left: -70%;
+    transform: translateY(-50%);
+    animation: slideInFromLeft 5s ease-in-out forwards;
+    will-change: transform, left;
     margin-top: 3rem;
 }
 
@@ -95,32 +94,31 @@ nav ul li a:hover {
     background-color: #000000;
     border-radius: 10px;
     position: absolute;
-    bottom: 100%;
-    right: -100%;
-    transform: translate(0, 0);
-    animation: slideInFromRight 1.5s ease forwards;
+    top: 50%;
+    right: -50%;
+    transform: translateY(-50%);
+    animation: slideInFromRight 5s ease-in-out forwards;
+    will-change: transform, right;
 }
 
 .image-box img {
     width: 64%;
     height: auto;
     border-radius: 10px;
+    transform: translateZ(0);
 }
 
 @keyframes slideInFromLeft {
     to {
-        top: 10%;
         left: 5%;
     }
 }
 
 @keyframes slideInFromRight {
     to {
-        bottom: 10%;
         right: 5%;
     }
 }
-
 
 .small-text {
     font-size: 0.9em; 
