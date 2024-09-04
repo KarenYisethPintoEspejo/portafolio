@@ -98,3 +98,24 @@ window.addEventListener('resize', function() {
 
 init();
 animate();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.getElementById('contact-heading');
+    const text = textElement.innerText;
+    textElement.innerText = '';
+    
+    let index = 0;
+    const typingSpeed = 200; 
+    const delayBeforeStart = 620; 
+
+    function type() {
+        if (index < text.length) {
+            textElement.innerText += text[index++];
+            setTimeout(type, typingSpeed);
+        }
+    }
+
+    setTimeout(type, delayBeforeStart); 
+});
+
