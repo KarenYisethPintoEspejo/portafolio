@@ -64,8 +64,8 @@ nav ul li a:hover {
 .carousel {
     overflow: hidden;
     position: relative;
-    width: 85%;
-    margin-left: 7.8rem;
+    width: 70%;
+    margin-left: 18rem;
 }
 
 .carousel-track {
@@ -111,14 +111,14 @@ nav ul li a:hover {
 }
 
 /* Animación del carrusel */
-/* @keyframes scroll {
+@keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
     }
-} */
+}
 
 .project-info a{
     text-decoration: none;
