@@ -120,3 +120,11 @@ nav ul li a:hover {
         right: 5%;
     }
 }
+
+
+.small-text {
+    font-size: 0.9em; 
+    color: #808080; 
+    margin-top: 10px; 
+    font-style: italic;
+}
