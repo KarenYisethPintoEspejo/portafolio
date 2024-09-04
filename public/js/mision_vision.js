@@ -165,3 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
         box.style.setProperty('--light-intensity', intensity.toFixed(2));
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('loaded');
+    document.querySelector('.img').classList.add('loaded');
+
+});

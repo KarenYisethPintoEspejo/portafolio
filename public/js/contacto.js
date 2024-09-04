@@ -119,3 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, delayBeforeStart); 
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('loaded');
+    document.querySelector('.img').classList.add('loaded');
+
+});

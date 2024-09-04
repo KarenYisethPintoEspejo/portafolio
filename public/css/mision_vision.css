@@ -223,3 +223,14 @@ nav ul li a:hover {
     margin-top: 3rem;
     border-radius: 17px;
 }
+
+
+.img{
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 1s ease-in-out 1.25s, transform 1s ease-in-out 1.25s;
+}
+.img.loaded {
+    opacity: 1;
+    transform: translateY(0); 
+}
