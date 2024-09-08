@@ -47,7 +47,7 @@ nav ul li a:hover {
     border: 3px solid rgb(179, 60, 248);
 }
 #services {
-
+    margin-top: -2%;
     background: transparent;
     min-height: 100vh;
 }
@@ -55,7 +55,7 @@ nav ul li a:hover {
 #services h2 {
     text-align: center;
     color: rgb(179, 60, 248);
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
