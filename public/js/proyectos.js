@@ -120,37 +120,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-// Obtener el modal
 var modal = document.getElementById("credencialesModal");
 
-// Obtener el enlace que abre el modal
-var btn = document.getElementById("cinecampusLink");
-
-// Obtener el elemento <span> que cierra el modal
 var span = document.getElementsByClassName("close")[0];
 
-// Variable para almacenar la URL a redirigir
-var redirectUrl = "";
+var redirectUrl = "https://proyectomongoii-vjs5.onrender.com";
 
-// Cuando el usuario haga clic en el enlace, abrir el modal
-btn.onclick = function(event) {
-    event.preventDefault(); // Previene la acción predeterminada del enlace
-    redirectUrl = btn.href; // Guarda la URL del enlace
-    modal.style.display = "block";
-}
+document.querySelectorAll('.open-modal').forEach(link => {
+    link.onclick = function(event) {
+        event.preventDefault();
+        redirectUrl = this.getAttribute('data-url'); 
+        modal.style.display = "block";
+    }
+});
 
-// Cuando el usuario haga clic en <span> (x), cerrar el modal y redirigir
+
 span.onclick = function() {
     modal.style.display = "none";
-    window.location.href = 'https://proyectomongoii-vjs5.onrender.com'; // Redirige al enlace
-}
-
-// Cuando el usuario haga clic en cualquier lugar fuera del modal, cerrarlo y redirigir
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        window.location.href = 'https://proyectomongoii-vjs5.onrender.com'; // Redirige al enlace
+    if (redirectUrl) {
+        window.location.href = redirectUrl; 
     }
 }
 
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        if (redirectUrl) {
+            window.location.href = redirectUrl; 
+        }
+    }
+}
